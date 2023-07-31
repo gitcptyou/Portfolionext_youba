@@ -1,94 +1,46 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import photopricipal from'../images/photoprincipale.jpg'
+import Imagedev from '../images/Image dev.jpg'
+import imagedev2 from '../images/image dev2.jpg'
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+       
         </div>
+
+      <div className={styles.center} style={{paddingTop:"1 cm", backgroundColor:"darkgrey"}}>
+      <fieldset>
+   <legend className='titlehome'> présentation: </legend>
+   <div className='phdiv'>
+   <Image src={photopricipal} alt='Ma photo' className='ph' style={{border:"#ccc solid", borderRadius:"30 px", width:"160px", height:"250px", display:"inline", float:'left'}}/>
+   </div>
+   <h1 style={{marginLeft:"50%"}}>Amghar Youba</h1>
+   <div>
+   <h2 style={{marginLeft:"50%"}}> développeur full stuck</h2>
+   <object data="./images/CV youba.pdf" type="application/pdf"  >
+        <p> <a href="./images/CV youba.pdf" download>télécharger le cv ici</a>.</p>
+    </object>
+   <p> Salut, je suis Amghar Youba nee Le 3 mai 1998 en algerie.
+    Je suis un developeur informatique full stuck.J'ai choisi de faire de ma passion mon métier,
+    je crée des  application web,mobile et descktop avec un design uniques qui reflètent ma créativité.
+    Entrez dans mon univers frais et pétillant, où chaque projet raconte une histoire unique et inspirante.
+   </p>
+   </div>
+  
+   </fieldset>
+  
+   
       </div>
+      <div style={{display:"flex"}}>
+   <Image src={Imagedev} alt='imagedeveloppeur'style={{height:"150px",marginLeft:"50px",marginTop:"20px", float:"right"}}/>
+    <Image src={imagedev2} alt='imagedeveloppeur'style={{ height:"150px",marginTop:"20px", float:"right"}}/>
+   </div>
+     
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div>
       </div>
     </main>
   )
