@@ -1,8 +1,23 @@
 'use client'
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
+import Link from "next/link";
+import {useDispatch,useSelector} from "react-redux";
+import { useRouter } from "next/router";
+import { Provider } from "react-redux";
+import { addOpinion,getOpinion } from "@/store/reducers/opinionReducer";
+import store from "@/store";
 
 const Avis = () => {
-
+    
+    <Provider store={store}>
+        const dispatch=useDispatch();
+         const opinions=useSelector(state=state.opinion.opinions)
+        <Avis/>
+    </Provider>
+   
+   
+    //const router=useRouter();
+    
    
     const [state, setState]= useState({
      firstName: '',
@@ -18,7 +33,10 @@ const Avis = () => {
      setState(previousState => ({ ...previousState, [name]: value }))
    }
    function submit(event) {
+    
     event.preventDefault() // Eviter le rafraichissement de la page ( eviter la soumission)
+    
+  // dispatch(addOpinion({...state, opinion}))
     setopinion(previousopinion => [...previousopinion, { ...state, id: previousopinion.length + 1 }])
     setState(prev => ({
         ...prev,
@@ -31,33 +49,43 @@ const Avis = () => {
   } 
 
     return (
-        <div>
+        
+        <div className="divhome">
+            
           <form className='container-inscription'onSubmit={submit}>
       <h1>Notez moi</h1>
 
 <div className='form-group'>
-<label className='l1'>nom:</label>
-<input type='text' placeholder='Saisir votre nom' required className='in1' name='firstname'   onChange={handleChange}></input>
+<label className='label'>nom:</label>
+<input type='text' placeholder='Saisir votre nom' required className='in2' name='firstname'   onChange={handleChange}></input>
   </div>     
     
      <div className='form-group'>
-     <label className='l2'>Prenom:</label>
+     <label className='label'>Prenom:</label>
       <input type='text' placeholder='saisi votre prenom'required className='in2' name="lastname"  onChange={handleChange} ></input>
      </div>
      <div className='form-group'>
-     <label className='l3'>Email:</label>
-      <input type='email' placeholder=' saisir votre emial' required className='in3'name="email" value={opinion.email} onChange={handleChange}></input>
+     <label className='label'>Email:</label>
+      <input type='email' placeholder=' saisir votre emial' required className='in2'name="email" value={opinion.email} onChange={handleChange}></input>
       </div>
      
       <div className='form-group'>
-      <label className='l4'>Description de l'avis:</label>
+      <label className='label'>Description de l'avis:</label>
       <textarea className='in4' placeholder='Vous pouvez ecrire votre text ici' cols="20" name="description"  value={opinion.description} on onChange={handleChange} ></textarea>
       </div>
       <div className='form-group'>
-      <button type='submit'>Appliquer mon avis</button>
+      <button type='submit' className="btn">Appliquer mon avis</button>
+      <Link href='/listdestemoinage' style={{display:"block" , marginLeft:"20%"}}>
+        passer vers la page des opinion
+      </Link>
+      <div style={{marginTop:"7%"}}> 
+
+      </div>
+      
       </div>
      
       </form>
+    
       <>
             {opinion.length ? (
                 <>
@@ -87,9 +115,12 @@ const Avis = () => {
                 </>):''}
 
 
-      </>  
+      </> 
+     
         </div>
+       
     );
+   
 }
 
 export default Avis;

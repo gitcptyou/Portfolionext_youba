@@ -4,7 +4,7 @@ import imglocation from '@/images/location.png'
 import imagecomplexe from '@/images/complexe.png'
 const projet = () => {
     return (
-        <div>
+        <div className="divhome">
             <section><h1>Projet</h1>
     <p>Les projets que j'ai réalisés pendant ma formation académique et professionnelle.</p> 
     </section>

@@ -6,12 +6,12 @@ import imagedev2 from '../images/image dev2.jpg'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <main className="divhome">
       <div className={styles.description}>
        
         </div>
 
-      <div className={styles.center} style={{paddingTop:"1 cm", backgroundColor:"darkgrey"}}>
+      <div className="divhome" style={{paddingTop:"1 cm", backgroundColor:"darkgrey"}}>
       <fieldset>
    <legend className='titlehome'> présentation: </legend>
    <div className='phdiv'>

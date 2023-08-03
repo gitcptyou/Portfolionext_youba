@@ -1,7 +1,11 @@
 import Header from '@/component/Header'
 import Footer from '@/component/Footer'
+import Avis from './temoinage/page'
 import './globals.css'
+import StoreProvider from '@/component/StoreProvider'
 import { Inter } from 'next/font/google'
+import { Provider } from 'react-redux'
+import store from '@/store'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,11 +18,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+       
       <Header />
+     
         <main>
         {children}
         </main>
        <Footer/>
+      
       
      
       </body>

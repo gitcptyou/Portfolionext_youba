@@ -1,7 +1,7 @@
 import React from "react";
 const competence = () => {
     return (
-        <div>
+        <div className="divhome">
             <div> <h1>competence technique:</h1>
    <ol>
     <fieldset>
@@ -101,6 +101,9 @@ const competence = () => {
     </table>
    
    </ol>
+     </div>
+     <div style={{marginTop:"7%" , backgroundColor:"darkslategrey"}}>
+
      </div>
 
         </div>

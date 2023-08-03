@@ -1,6 +1,7 @@
 "use client"
 import React from "react";
 import { useState } from "react";
+import '../page.module.css'
 const contact = () => {
     const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
     const nomRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/
@@ -57,37 +58,40 @@ const contact = () => {
 
 
     return (
-        <div>
+        <div className="divhome">
           <form className='container-inscription'>
       <h1>Contactez moi</h1>
 
 <div className='form-group'>
-<label className='l1'>nom:</label>
-<input type='text' placeholder='Saisir votre nom'  name='nom'  className={`in1 ${fieldHasError('nom') && "is-invalid"}`} value={state.nom} onChange={handleChange}></input>
+<label className='label'>nom:</label>
+<input type='text' placeholder='Saisir votre nom'  name='nom'  className={`in2 ${fieldHasError('nom') && "is-invalid"}`} value={state.nom} onChange={handleChange}></input>
 <div className={fieldHasError('nom') ? "invalid-feedback" : "valid-feedback"}>{errors.nom}</div>
   </div>     
     
      <div className='form-group'>
-     <label className='l2'>Prenom:</label>
+     <label className='label'>Prenom:</label>
       <input type='text' placeholder='saisi votre prenom' name='prenom'  className={`in2 ${fieldHasError('nom') && "is-invalid"}`} value={state.prenom} onChange={handleChange}></input>
       <div className={fieldHasError('prenom') ? "invalid-feedback" : "valid-feedback"}>{errors.prenom}</div>
      </div>
      <div className='form-group'>
-     <label className='l3'>Email:</label>
-      <input type='email' placeholder=' saisir votre emial' name='email'  className={`in3 ${fieldHasError('nom') && "is-invalid"}`} value={state.email} onChange={handleChange}></input>
+     <label className='label'>Email:</label>
+      <input type='email' placeholder=' saisir votre emial' name='email'  className={`in2 ${fieldHasError('nom') && "is-invalid"}`} value={state.email} onChange={handleChange}></input>
       <div className={fieldHasError('email') ? "invalid-feedback" : "valid-feedback"}>{errors.email}</div>
       </div>
      
       <div className='form-group'>
-      <label className='l4'>Description:</label>
+      <label className='label'>Description:</label>
       <textarea className={`in4 ${fieldHasError('description') && "is-invalid"}`} placeholder='Vous pouvez ecrire votre text ici' cols="20"></textarea>
       </div>
       <div className='form-group'>
-      <button type='submit'>Soumetre</button>
+      <button type='submit' className="btn">Soumetre</button>
       </div>
       
-     
-      </form>   
+      <div className="divc" style={{marginTop:"7%" , backgroundColor:"darkslategrey"}}>
+        
+        </div> 
+      </form> 
+       
         </div>
     );
 }

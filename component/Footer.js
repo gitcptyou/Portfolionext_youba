@@ -2,9 +2,10 @@ import React from "react";
 import Image from "next/image";
 import imagewh from '../images/wh.jpg'
 import imagelink from '../images/linked.jpg'
+
 const Footer = () => {
     return (
-        <div style={{display:"inline", placeItems:"center", marginLeft:"25%", height:"40px"}}>
+        <div style={{display:"inline", placeItems:"center", marginLeft:"25%", height:"5px" , backgroundColor:"aqua"}} className="ftr">
             <Image src={imagewh} alt='Mon whatsapp' className='wh' style={{display:"inline"}} width={30} height={30}/>
             (+1) 438-993-5280 
  <a href='https://www.linkedin.com/in/amghar-youba-809822209/'>
